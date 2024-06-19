@@ -1,0 +1,20 @@
+.list {
+	list-style: none;
+	width: 100%;
+	padding-left: 0;
+}
+
+.item {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.carrier {
+	overflow: hidden;
+	width: 60%;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0;
+	margin: 0;
+}
