@@ -50,19 +50,22 @@ const Card = memo(({ carrier, price, legs }: IFlight) => {
 			</div>
 
 			<div className={styles.destination}>
-				<p>{segmentsDepartureForward.departureCity.caption}, &nbsp;</p>
-				<p>{segmentsDepartureForward.departureAirport.caption} &nbsp;</p>
-				<p className={styles.airportUid}>
-					&nbsp; {`(${segmentsDepartureForward.departureAirport.uid})`} &nbsp;
-				</p>
+				<div className={styles.details}>
+					<p>{segmentsDepartureForward.departureCity.caption}, </p>
+					<p>{segmentsDepartureForward.departureAirport.caption} </p>
+					<p className={styles.airportUid}>
+						{`(${segmentsDepartureForward.departureAirport.uid})`}
+					</p>
+				</div>
+				<p>&nbsp; &rarr; &nbsp;</p>
 				{segmentsArrivalForward && (
-					<>
-						<p>&rarr; {segmentsArrivalForward.arrivalCity.caption}, &nbsp;</p>
-						<p>{segmentsArrivalForward.arrivalAirport.caption} &nbsp;</p>
+					<div className={styles.details}>
+						<p> {segmentsArrivalForward.arrivalCity.caption}, </p>
+						<p>{segmentsArrivalForward.arrivalAirport.caption} </p>
 						<p
 							className={styles.airportUid}
 						>{`(${segmentsArrivalForward.arrivalAirport.uid})`}</p>
-					</>
+					</div>
 				)}
 			</div>
 			<div className={styles.timeDate}>
@@ -95,22 +98,24 @@ const Card = memo(({ carrier, price, legs }: IFlight) => {
 			>{`Рейс выполняет: ${segmentsDepartureForward.airline.caption}`}</p>
 
 			<div className={styles.destination}>
-				{segmentsDepartureBackward.departureCity && (
-					<p>{segmentsDepartureBackward.departureCity.caption}, &nbsp;</p>
-				)}
-				<p>{segmentsDepartureBackward.departureAirport.caption} &nbsp;</p>
-				<p className={styles.airportUid}>
-					{`(${segmentsDepartureBackward.departureAirport.uid})`} &nbsp;
-				</p>
-
+				<div className={styles.details}>
+					{segmentsDepartureBackward.departureCity && (
+						<p>{segmentsDepartureBackward.departureCity.caption}, </p>
+					)}
+					<p>{segmentsDepartureBackward.departureAirport.caption} </p>
+					<p className={styles.airportUid}>
+						{`(${segmentsDepartureBackward.departureAirport.uid})`}
+					</p>
+				</div>
+				<p>&nbsp; &rarr; &nbsp;</p>
 				{segmentsArrivalBackward && (
-					<>
-						<p>&rarr; {segmentsArrivalBackward.arrivalCity.caption}, &nbsp;</p>
-						<p>{segmentsArrivalBackward.arrivalAirport.caption} &nbsp;</p>
+					<div className={styles.details}>
+						<p>{segmentsArrivalBackward.arrivalCity.caption}, </p>
+						<p>{segmentsArrivalBackward.arrivalAirport.caption} </p>
 						<p
 							className={styles.airportUid}
 						>{`(${segmentsArrivalBackward.arrivalAirport.uid})`}</p>
-					</>
+					</div>
 				)}
 			</div>
 			<div className={styles.timeDate}>
