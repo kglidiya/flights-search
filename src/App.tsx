@@ -163,7 +163,7 @@ function App() {
 				<p className="filters">Фильтровать</p>
 				<FilterList options={legsNumber} handleChange={handleChangeTransfers} />
 				<p className="filters">Цена</p>
-				<form onSubmit={handleSubmit(onSubmit)} id="signin" noValidate>
+				<form onSubmit={handleSubmit(onSubmit)} noValidate>
 					<Input
 						name="priceMin"
 						register={register}
